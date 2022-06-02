@@ -1,6 +1,6 @@
 set -x
 
-max_jobs=8
+max_jobs=32
 year=1990
 
 for day in `seq 0 364`
