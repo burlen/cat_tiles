@@ -3,9 +3,11 @@ some code to concatenate tiles of data in netcdf format
 
 
 ## Build on Cori
+```
 module swap PrgEnv-intel PrgEnv-gnu
 module load cray-netcdf
 make
+```
 
 ## Usage
 ```
