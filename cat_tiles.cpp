@@ -27,7 +27,7 @@ int main(int argc, char **argv)
     size_t day = atoi(argv[3]);
     const char *output_dir = argv[4];
 
-    fprintf(stderr, "Processing year %04d day %04zu\n", year, day);
+    fprintf(stderr, "Processing year %04d day %03zu\n", year, day);
 
     int ierr = 0;
 
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 
     // create the output file
     char out_file[256] = {'\0'};
-    sprintf(out_file, "%s/WUS_UCLA_SR_v01_ALL_0_agg_16_WY%04d_D%02zu_91_SWE_SCA_POST.nc",
+    sprintf(out_file, "%s/WUS_UCLA_SR_v01_ALL_0_agg_16_WY%04d_D%03zu_91_SWE_SCA_POST.nc",
         output_dir, year, day);
 
     int ofid = 0;
@@ -195,8 +195,10 @@ int main(int argc, char **argv)
             ierr = nc_put_vara_float(ofid, scap_id, ostart, ocount, scap);
             check_error(ierr, "nc_put_vara_float", __LINE__);
 
-            fprintf(stderr, "STATUS: copied tile %dN %dW \t tile loc = [%zu, %zu] \t corner = [%gN, %gW]\n",
-                deg_n, deg_w, ostart[2] / tile_size, ostart[3] / tile_size, y[ostart[3]], x[ostart[2]]);
+            fprintf(stderr, "STATUS: copied tile WY%04d_D%03zu_N%d_0_W%d_0"
+                " \t tile loc = [%zu, %zu] \t corner = [%gN, %gW]\n",
+                year, day, deg_n, deg_w, ostart[2] / tile_size, ostart[3] / tile_size,
+                y[ostart[3]], x[ostart[2]]);
         }
     }
 
