@@ -3,6 +3,14 @@
 #include <cstring>
 #include <netcdf.h>
 
+/******************************************************************
+ * This utility was written by Burlen Loring <bloring@lbl.gov> and
+ * Alan Rhoades <arhoades@lbl.gov> for the CASCADE project. The
+ * authors retain all copyrights while making it freely available
+ * under the terms of a BSD licence with the limitations required
+ * by the US DOE and LBNL.
+ ******************************************************************/
+
 #define USE_MEMCPY
 
 void check_error(int ierr, const char *call, int line)
