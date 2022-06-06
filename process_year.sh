@@ -10,5 +10,5 @@ do
     then
         wait -n
     fi
-    ./cat_tiles /global/cscratch1/sd/arhoades/TGW/data/Margulis/raw/080465779517797 ${year} ${day} ./ &
+    time ./cat_tiles /global/cscratch1/sd/arhoades/TGW/data/Margulis/raw/080465779517797 ${year} ${day} ./ &
 done
