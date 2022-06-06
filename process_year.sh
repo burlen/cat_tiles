@@ -12,3 +12,5 @@ do
     fi
     time ./cat_tiles /global/cscratch1/sd/arhoades/TGW/data/Margulis/raw/080465779517797 ${year} ${day} ./ &
 done
+
+echo "Completed processing ${year} using ${max_jobs} processes."
