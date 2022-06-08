@@ -1,6 +1,5 @@
 # cat_tiles
-some code to concatenate tiles of data in netcdf format
-
+This is a code to concatenate tiles of data in netcdf format from the Western United States UCLA Daily Snow Reanalysis, Version 1 dataset. https://nsidc.org/data/WUS_UCLA_SR/versions/1
 
 ## Build on Cori
 ```
